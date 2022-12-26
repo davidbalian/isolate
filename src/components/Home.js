@@ -5,7 +5,7 @@ const Home = () => {
   const prefix = "https://cdn.jsdelivr.net/gh/davidbalian/isolate-sounds/";
 
   return (
-    <div>
+    <div className="home">
       <div className="sounds">
         <Sound src={prefix + "rain-light.wav"} name="rain" />
         <Sound src={prefix + "fire.wav"} name="fire" />
