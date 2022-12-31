@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Howl } from "howler";
 import PlayCircleFilledRoundedIcon from "@mui/icons-material/PlayCircleFilledRounded";
 import PauseCircleFilledRoundedIcon from "@mui/icons-material/PauseCircleFilledRounded";
 
 const Sound = ({ src, name }) => {
-  let id1;
   const sound = new Howl({
     src: src,
     html5: true,
     volume: 0.75,
+    loop: true,
   });
 
   const handleVolumeChange = (e) => {
