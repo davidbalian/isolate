@@ -2,8 +2,7 @@ import React from "react";
 import Sound from "./Sound";
 
 const Home = () => {
-  const prefix =
-    "https://cdn.jsdelivr.net/gh/davidbalian/isolate/public/sounds/";
+  const prefix = "https://isolatesounds.s3.eu-central-1.amazonaws.com/";
 
   return (
     <div className="home">
