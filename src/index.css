@@ -1,9 +1,9 @@
 :root {
-  --main-color: #413a41;
-  --bg: #eeecf1;
-  --bg-2: #bbc7dd;
-  --bg-transparent: rgba(238, 236, 241, 0.8);
-  --bg-2-transparent: rgba(187, 199, 221, 0);
+  --main-color: #b5d1e3;
+  --bg: #12242f;
+  --bg-2: #12242f;
+  --bg-transparent: #12242f00;
+  --bg-2-transparent: #12242f00;
 }
 
 * {
@@ -54,7 +54,7 @@ p {
       var(--bg-transparent) 0%,
       var(--bg-2-transparent) 100%
     ),
-    url(../public/pietro-de-grandi-iqhvdQdgP40-unsplash.jpg);
+    url(../public/elliott-engelmann-DjlKxYFJlTc-unsplash.jpg);
   background-size: cover;
   background-position: center center;
 }
@@ -69,8 +69,15 @@ p {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.opaque-sound {
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
+}
+
+.solid-sound {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .sound-name {

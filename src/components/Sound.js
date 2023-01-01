@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Howl } from "howler";
 import PlayCircleFilledRoundedIcon from "@mui/icons-material/PlayCircleFilledRounded";
 import PauseCircleFilledRoundedIcon from "@mui/icons-material/PauseCircleFilledRounded";
 
 const Sound = ({ src, name }) => {
+  // const [playing, setPlaying] = useState(false);
+
   const sound = new Howl({
     src: src,
     html5: true,
@@ -19,8 +21,12 @@ const Sound = ({ src, name }) => {
     sound.playing() ? console.log("ignore this log lmao") : sound.play();
   };
 
+  // const handleClass = () => {};
+
   return (
-    <div className="sound">
+    <div
+      className={sound.playing() ? "sound solid-sound" : "sound opaque-sound"}
+    >
       <p className="sound-name">{name}</p>
       <div className="controls">
         <PlayCircleFilledRoundedIcon
