@@ -15,15 +15,17 @@ const Sound = ({ src, name }) => {
     sound.volume(parseInt(e.target.value, 10) / 100);
   };
 
+  const handlePlay = () => {
+    sound.playing() ? console.log("ignore this log lmao") : sound.play();
+  };
+
   return (
     <div className="sound">
       <p className="sound-name">{name}</p>
       <div className="controls">
         <PlayCircleFilledRoundedIcon
           className="play-pause-btn"
-          onClick={() => {
-            sound.play();
-          }}
+          onClick={handlePlay}
         />
 
         <div className="volume-controls">

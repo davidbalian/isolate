@@ -3,7 +3,7 @@
   --bg: #eeecf1;
   --bg-2: #bbc7dd;
   --bg-transparent: rgba(238, 236, 241, 0.8);
-  --bg-2-transparent: rgba(187, 199, 221, 0.5);
+  --bg-2-transparent: rgba(187, 199, 221, 0);
 }
 
 * {
@@ -27,9 +27,6 @@ p {
   color: var(--main-color);
 }
 
-.main {
-}
-
 .header {
   width: 100vw;
   position: fixed;
@@ -46,25 +43,26 @@ p {
   padding: 8rem 12rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
-  gap: 4rem;
+  grid-template-rows: repeat(auto-fit, 120px);
+  gap: 2rem;
   justify-content: center;
   justify-items: center;
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   background: linear-gradient(
       180deg,
       var(--bg-transparent) 0%,
       var(--bg-2-transparent) 100%
     ),
-    url(../public/else-marie-de-leeuw-U1pF6SJ4fs8-unsplash.jpg);
+    url(../public/pietro-de-grandi-iqhvdQdgP40-unsplash.jpg);
   background-size: cover;
   background-position: center center;
 }
 
 .sound {
   padding: 1rem;
-  width: 200px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -95,7 +93,11 @@ p {
 }
 
 .play-pause-btn:hover {
-  transform: scale(1.5);
+  transform: scale(1.4);
+}
+
+.play-pause-btn:active {
+  transform: scale(1.3);
 }
 
 /*volume slider*/
