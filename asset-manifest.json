@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/isolate/static/css/main.041e29b0.css",
+    "main.js": "/isolate/static/js/main.7a5839a5.js",
+    "static/js/787.490239cc.chunk.js": "/isolate/static/js/787.490239cc.chunk.js",
+    "static/media/elliott-engelmann-DjlKxYFJlTc-unsplash.jpg": "/isolate/static/media/elliott-engelmann-DjlKxYFJlTc-unsplash.ffacd85a097fc24c9139.jpg",
+    "index.html": "/isolate/index.html",
+    "main.041e29b0.css.map": "/isolate/static/css/main.041e29b0.css.map",
+    "main.7a5839a5.js.map": "/isolate/static/js/main.7a5839a5.js.map",
+    "787.490239cc.chunk.js.map": "/isolate/static/js/787.490239cc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.041e29b0.css",
+    "static/js/main.7a5839a5.js"
+  ]
+}
