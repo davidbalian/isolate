@@ -397,4 +397,8 @@ p {
     grid-auto-flow: column;
     grid-template-rows: auto auto;
   }
+
+  h2 {
+    font-weight: 400;
+  }
 }
