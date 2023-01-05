@@ -1,10 +1,16 @@
 :root {
-  --main-color: #c2def0;
+  /* --main-color: #c2def0; */
+  --main-color: #e0e1e4;
   --bg: #12242f;
   --bg-2: #12242f;
   --bg-transparent: #12242f80;
   --bg-2-transparent: #12242f00;
-  --light: #f5f5f5;
+  --light: #e0e1e4;
+  --h2-size: 1.6rem;
+  --h1-size: 2rem;
+  --transition-time: 0.2s;
+  --blur: 20px;
+  --desktop-width: 800px;
   font-size: 16px;
 }
 
@@ -12,6 +18,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg);
 }
 
 body {
@@ -29,6 +39,14 @@ p {
   color: var(--main-color);
 }
 
+.hide {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
 /* HEADER */
 
 .header {
@@ -39,52 +57,44 @@ p {
   padding: 1rem 0;
   text-align: center;
   z-index: 999;
-  transition: background-color 0.2s, padding 0.2s;
+  transition: background-color var(--transition-time),
+    padding var(--transition-time);
 }
 
 .header-scroll {
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(var(--blur));
   padding: 0.25rem 0;
 }
 
 .logo {
-  font-size: 2rem;
-  transition: color 0.2s, font-size 0.2s;
+  font-size: var(--h1-size);
+  transition: color var(--transition-time), font-size var(--transition-time);
 }
 
 .header-logo-scroll {
-  color: #f5f5f5;
-  font-size: 1.5rem;
+  color: var(--light);
+  font-size: var(--h2-size);
 }
 
 /* HOMEPAGE */
 
 .home {
   width: 100%;
-  /* background: linear-gradient(
-      180deg,
-      var(--bg-transparent) 0%,
-      var(--bg-2-transparent) 100%
-    ),
-    url(../public/elliott-engelmann-DjlKxYFJlTc-unsplash.jpg);
-  background-size: cover;
-  background-position: center center; */
 }
 
 /* MAIN SOUNDS SECTION */
 
 .sounds {
   margin: auto;
-  width: 1000px;
+  width: var(--desktop-width);
   display: grid;
-  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-columns: repeat(auto-fit, 225px);
   grid-template-rows: repeat(auto-fit, 120px);
   gap: 2rem;
   justify-content: center;
   justify-items: center;
   align-content: center;
-  transition: padding 0.5s;
   text-align: center;
   height: 100vh;
 }
@@ -94,37 +104,51 @@ p {
   width: 100%;
   height: 100%;
   border-radius: 0.5rem;
+  transition: background-color var(--transition-time);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  align-items: flex-start;
 }
 
-.sound p {
+.sound h2 {
   font-family: "DM Serif Display", serif;
+  font-size: var(--h2-size);
+  color: var(--main-color);
 }
 
 .opaque-sound {
   background-color: var(--bg-transparent);
-  backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(var(--blur));
 }
 
 .solid-sound {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--bg);
 }
 
 .sound-name {
-  font-size: 1.5rem;
+  font-size: var(--h2);
 }
 
 .controls {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   gap: 1rem;
 }
 
 .controls svg {
-  transition: 0.1s ease;
+  transition: 0.2s ease;
+}
+
+.sound input {
+  width: 100%;
+}
+
+.volume-icon {
+  transform: scale(1.5);
+  transition: display 1s;
+  color: var(--main-color);
 }
 
 .play-pause-btn {
@@ -142,9 +166,10 @@ p {
 }
 
 /* VOLUME SLIDER */
+
 input[type="range"].volume-slider {
   width: 100%;
-  margin: 6px 0;
+  margin: 10px 0;
   background-color: transparent;
   -webkit-appearance: none;
 }
@@ -255,13 +280,14 @@ input[type="range"].volume-slider:focus::-ms-fill-upper {
 }
 
 .about {
-  width: 800px;
+  width: var(--desktop-width);
   margin: auto;
 }
 
 .about h2 {
-  font-size: 1.5rem;
+  font-size: var(--h2-size);
   margin: 4rem 0 2rem 0;
+  color: var(--bg);
 }
 
 .about p {
@@ -307,7 +333,7 @@ input[type="range"].volume-slider:focus::-ms-fill-upper {
 }
 
 .footer {
-  width: 800px;
+  width: var(--desktop-width);
   margin: auto;
   display: grid;
   grid-template-columns: 200px 200px;
@@ -316,7 +342,7 @@ input[type="range"].volume-slider:focus::-ms-fill-upper {
 }
 
 .footer h2 {
-  font-size: 1.5rem;
+  font-size: var(--h2-size);
   line-height: 2rem;
   color: var(--light);
 }
@@ -360,10 +386,10 @@ p {
 @media only screen and (max-width: 768px) {
   .sounds {
     width: 100%;
-    padding: 0 2rem;
+    padding: 0 1rem;
     gap: 1rem;
     grid-template-columns: repeat(2, 180px);
-    grid-template-rows: repeat(auto-fit, 120px);
+    /* grid-template-rows: repeat(auto-fit, 120px); */
   }
 
   .footer {

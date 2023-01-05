@@ -1,38 +1,46 @@
 import React, { useState } from "react";
-import { Howl } from "howler";
 import PlayCircleFilledRoundedIcon from "@mui/icons-material/PlayCircleFilledRounded";
 import PauseCircleFilledRoundedIcon from "@mui/icons-material/PauseCircleFilledRounded";
+import VolumeUpRoundedIcon from "@mui/icons-material/VolumeUpRounded";
+import VolumeOffRoundedIcon from "@mui/icons-material/VolumeOffRounded";
+import VolumeDownRoundedIcon from "@mui/icons-material/VolumeDownRounded";
+import ReactHowler from "react-howler";
 
 const Sound = ({ src, name }) => {
-  // const [playing, setPlaying] = useState(false);
-
-  const sound = new Howl({
-    src: src,
-    html5: true,
-    volume: 0.75,
-    loop: true,
-  });
+  const [playing, setPlaying] = useState(false);
+  const [volume, setVolume] = useState(0.75);
 
   const handleVolumeChange = (e) => {
-    sound.volume(parseInt(e.target.value, 10) / 100);
+    setVolume(parseInt(e.target.value, 10) / 100);
   };
-
-  const handlePlay = () => {
-    sound.playing() ? console.log("ignore this log lmao") : sound.play();
-  };
-
-  // const handleClass = () => {};
 
   return (
-    <div
-      className={sound.playing() ? "sound solid-sound" : "sound opaque-sound"}
-    >
-      <p className="sound-name">{name}</p>
+    <div className={playing ? "sound solid-sound" : "sound opaque-sound"}>
+      <h2 className="sound-name">{name}</h2>
+      <ReactHowler
+        src={src}
+        playing={playing}
+        html5={true}
+        loop={true}
+        volume={volume}
+        style={{ dipslay: "none" }}
+      />
       <div className="controls">
-        <PlayCircleFilledRoundedIcon
-          className="play-pause-btn"
-          onClick={handlePlay}
-        />
+        {!playing ? (
+          <PlayCircleFilledRoundedIcon
+            className="play-pause-btn"
+            onClick={() => {
+              setPlaying(true);
+            }}
+          />
+        ) : (
+          <PauseCircleFilledRoundedIcon
+            className="play-pause-btn"
+            onClick={() => {
+              setPlaying(false);
+            }}
+          />
+        )}
 
         <div className="volume-controls">
           <input
@@ -43,12 +51,23 @@ const Sound = ({ src, name }) => {
             onChange={handleVolumeChange}
           />
         </div>
-        <PauseCircleFilledRoundedIcon
-          className="play-pause-btn"
-          onClick={() => {
-            sound.pause();
-          }}
-        />
+        {volume > 0.75 ? (
+          <VolumeUpRoundedIcon
+            className={volume > 0.75 ? "volume-icon block" : "volume-icon hide"}
+          />
+        ) : volume <= 0.75 && volume > 0 ? (
+          <VolumeDownRoundedIcon
+            className={
+              volume <= 0.75 && volume > 0
+                ? "volume-icon block"
+                : "volume-icon hide"
+            }
+          />
+        ) : (
+          <VolumeOffRoundedIcon
+            className={volume === 0 ? "volume-icon block" : "volume-icon hide"}
+          />
+        )}
       </div>
     </div>
   );
