@@ -51,22 +51,12 @@ const Sound = ({ src, name }) => {
             onChange={handleVolumeChange}
           />
         </div>
-        {volume > 0.75 ? (
-          <VolumeUpRoundedIcon
-            className={volume > 0.75 ? "volume-icon block" : "volume-icon hide"}
-          />
-        ) : volume <= 0.75 && volume > 0 ? (
-          <VolumeDownRoundedIcon
-            className={
-              volume <= 0.75 && volume > 0
-                ? "volume-icon block"
-                : "volume-icon hide"
-            }
-          />
+        {volume > 0.5 ? (
+          <VolumeUpRoundedIcon className="volume-icon" />
+        ) : volume <= 0.5 && volume > 0 ? (
+          <VolumeDownRoundedIcon className="volume-icon" />
         ) : (
-          <VolumeOffRoundedIcon
-            className={volume === 0 ? "volume-icon block" : "volume-icon hide"}
-          />
+          <VolumeOffRoundedIcon className="volume-icon" />
         )}
       </div>
     </div>
