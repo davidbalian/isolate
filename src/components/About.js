@@ -22,7 +22,7 @@ const About = () => {
             <p>- david</p>
 
             <h2>what's the research behind this?</h2>
-            <p>let's talk about brown noise here for a second. according to <a href={articleLink}>this article</a> from <a href="https://cassybayarea.org/">cassybayarea.org</a>: "Brown noise, which contains lower frequencies many find soothing,
+            <p>let's talk about brown noise here for a second. according to <a href={articleLink} target="_blank" rel="noreferrer" className="link-underline">this article</a> from <a href="https://cassybayarea.org/" target="_blank" rel="noreferrer" className="link-underline">cassybayarea.org</a>: "Brown noise, which contains lower frequencies many find soothing,
                 is similar to the brain's resting state, which is why it helps people to relax. Brown noise playlists have also been created to help babies, since it mimics the
                 sound inside a mother's womb."
             </p>
