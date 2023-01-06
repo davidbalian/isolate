@@ -3,7 +3,7 @@
   --main-color: #e0e1e4;
   --bg: #12242f;
   --bg-2: #12242f;
-  --bg-transparent: #12242f80;
+  --bg-transparent: rgba(18, 36, 47, 0.75);
   --bg-2-transparent: #12242f00;
   --light: #e0e1e4;
   --h2-size: 1.6rem;
