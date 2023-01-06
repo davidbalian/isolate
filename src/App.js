@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import platform from "platform";
 import Home from "./components/Home";
 
-import img from "./elliott-engelmann-DjlKxYFJlTc-unsplash.jpg";
+import img from "./isolate-bg-min.jpeg";
 import IOSModal from "./components/IOSModal";
 
 const App = () => {
